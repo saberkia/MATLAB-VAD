@@ -11,16 +11,15 @@ C     = 33;            % number of cepstral coefficients
 L     = 22;            % cepstral sine lifter parameter
 point = 600000;
 sample_rate = 5;       % Downsample Rate
-
 [data,Fs] = audioread('Voice 003.m4a');
+data_dspl = data(1:sample_rate:end);
 
-for i = 1:
+for i = 1:100
 signal    = data(point:point + 80000)';
 % Downsampling
 signal    = signal(1:sample_rate:end);
 Fs        = Fs/sample_rate;
-plot(signal)
-grid on
+
 
 % hamming window
 hamming = @(N)(0.54-0.46*cos(2*pi*(0:N-1).'/(N-1)));
