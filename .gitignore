@@ -1,1 +1,3 @@
-vad_data/
+data/
+*.mat
+*.rar
